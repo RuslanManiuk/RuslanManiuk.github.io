@@ -1,0 +1,467 @@
+.apartment-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.apartment-main {
+    flex: 1;
+    max-width: 65%;
+    min-height: 600px; /* Мінімальна висота, щоб pricing не піднімався */
+}
+
+.description-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    padding: 12px 15px;
+}
+
+.table-label {
+    width: 30%;
+    min-width: 150px;
+    font-weight: bold;
+    color: #a08a69;
+    background-color: #1f1f1f;
+}
+
+.table-value {
+    width: 70%;
+    color: #ddd;
+    background-color: #262626;
+}
+
+@media (max-width: 600px) {
+    .table-row {
+        flex-direction: column;
+    }
+
+    .table-cell {
+        width: 100% !important;
+    }
+
+    .table-label {
+        border-bottom: 1px solid #3d3d3d;
+    }
+}
+
+.apartment-video {
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.apartment-video h3 {
+    color: #a08a69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-description {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .apartment-video {
+        padding: 15px;
+    }
+
+    .apartment-video h3 {
+        font-size: 1.8rem;
+    }
+
+    .video-description {
+        font-size: 14px;
+    }
+}
+
+h2, h3 {
+    color: #a08a69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.apartment-details {
+    text-align: center;
+    padding-top: 180px;
+    padding-bottom: 0px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.apartment-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.apartment-pricing {
+    width: 30%;
+    max-width: 350px;
+    position: sticky;
+    top: 248px;
+    align-self: flex-start; /* Вирівнювання по верху .apartment-main */
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.price-block h3 {
+    font-size: 2.8rem;
+    color: #a08a69;
+}
+
+.owner-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.owner-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.owner-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.owner-status {
+    font-size: 14px;
+    color: #777;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.apartment-pricing p, .apartment-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #c8a77e;
+}
+
+/* CSS для секції */
+.apartment-location {
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.location-content {
+    display: flex;
+    gap: 30px;
+}
+
+.location-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.location-map {
+    flex: 2;
+    position: relative;
+}
+
+.static-map {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.static-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-marker {
+    position: absolute;
+    font-size: 2rem;
+    color: #e74c3c;
+    transform: translate(-50%, -100%);
+}
+
+/* Стилі для фіксованої кнопки бронювання */
+.fixed-booking-btn-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    filter: drop-shadow(0 4px 12px rgba(160, 138, 105, 0.3));
+}
+
+.fixed-book-btn {
+    background-color: rgba(160, 138, 105, 0.45); /* Прозорість */
+    backdrop-filter: blur(8px); /* Розмиття */
+    -webkit-backdrop-filter: blur(8px); /* Для Safari */
+    color: #1c1c1c;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонка обводка */
+    overflow: hidden;
+    position: relative;
+}
+
+.fixed-book-btn:hover {
+    background-color: rgba(200, 167, 126, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(160, 138, 105, 0.4);
+}
+
+.fixed-book-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(160, 138, 105, 0.4);
+}
+
+/* Ефект блиску при наведенні */
+.fixed-book-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+    );
+    transition: 0.5s;
+}
+
+.fixed-book-btn:hover::after {
+    left: 100%;
+}
+
+/* Іконка для кнопки */
+.fixed-book-btn .check-icon {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Стилі для модального вікна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #262626;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #a08a69;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #b3a89a;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.modal h2 {
+    color: #a08a69;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b3a89a;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a08a69;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #c8a77e;
+}
+
+/* Анімація для стану "заброньовано" */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fixed-book-btn.booked {
+    animation: pulse 0.5s ease;
+    background-color: rgba(76, 175, 80, 0.85);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .fixed-booking-btn-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fixed-book-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
