@@ -1,0 +1,964 @@
+.apartment-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.apartment-main {
+    flex: 1;
+    max-width: 65%;
+    min-height: 600px; /* Мінімальна висота, щоб pricing не піднімався */
+}
+
+.description-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.table-row {
+    display: flex;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    padding: 12px 15px;
+}
+
+.table-label {
+    width: 30%;
+    min-width: 150px;
+    font-weight: bold;
+    color: #a08a69;
+    background-color: #1f1f1f;
+}
+
+.table-value {
+    width: 70%;
+    color: #ddd;
+    background-color: #262626;
+}
+
+@media (max-width: 600px) {
+    .table-row {
+        flex-direction: column;
+    }
+
+    .table-cell {
+        width: 100% !important;
+    }
+
+    .table-label {
+        border-bottom: 1px solid #3d3d3d;
+    }
+}
+
+/* Reviews section - Updated */
+.apartment-reviews {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: #262626;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.apartment-reviews h2 {
+    color: #a08a69;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.apartment-reviews h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #a08a69, #d4b483, #a08a69);
+    border-radius: 3px;
+}
+
+.add-review {
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #3d3d3d;
+}
+
+.add-review h4 {
+    margin-top: 0;
+    color: #a08a69;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.rating-input {
+    margin-bottom: 20px;
+}
+
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse; /* Це важливо */
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.rating-stars input[type="radio"] {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 2rem;
+    color: #3d3d3d;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative;
+}
+.rating-stars label::before {
+    content: '★';
+}
+
+/* Ховер по label — підсвічуються всі попередні (бо row-reverse) */
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #FFD700;
+}
+
+/* Активна оцінка — підсвічення для всіх попередніх */
+.rating-stars input[type="radio"]:checked ~ label {
+    color: #3d3d3d; /* Скидаємо попереднє */
+}
+.rating-stars input[type="radio"]:checked + label,
+.rating-stars input[type="radio"]:checked + label ~ label {
+    color: #FFD700;
+}
+
+.review-rating {
+    display: flex;
+    gap: 3px;
+}
+
+
+.review-rating .star {
+    font-size: 1.2rem;
+}
+
+.add-review textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: #ddd;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+.add-review textarea:focus {
+    outline: none;
+    border-color: #a08a69;
+    box-shadow: 0 0 0 2px rgba(160, 138, 105, 0.2);
+}
+
+.submit-review-btn {
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.submit-review-btn:hover {
+    background-color: #c8a77e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(160, 138, 105, 0.3);
+}
+
+.reviews-list {
+    margin-top: 30px;
+}
+
+.review-item {
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    border-left: 4px solid #a08a69;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #a08a69;
+    font-size: 1.1rem;
+}
+
+.review-rating {
+    display: flex;
+    gap: 3px;
+}
+
+.review-rating .star {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.review-date {
+    color: #777;
+    font-size: 0.9em;
+    margin-left: auto;
+}
+
+.review-comment {
+    line-height: 1.6;
+    color: #ddd;
+    font-size: 16px;
+}
+
+.no-reviews {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .apartment-reviews {
+        padding: 20px;
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .review-date {
+        margin-left: 0;
+    }
+
+    .add-review {
+        padding: 20px;
+    }
+}
+
+.apartment-video {
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.apartment-video h3 {
+    color: #a08a69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-description {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .apartment-video {
+        padding: 15px;
+    }
+
+    .apartment-video h3 {
+        font-size: 1.8rem;
+    }
+
+    .video-description {
+        font-size: 14px;
+    }
+}
+
+h2, h3 {
+    color: #a08a69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.apartment-details {
+    text-align: center;
+    padding-top: 180px;
+    padding-bottom: 0px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.apartment-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.apartment-pricing {
+    width: 30%;
+    max-width: 350px;
+    position: sticky;
+    top: 248px;
+    align-self: flex-start; /* Вирівнювання по верху .apartment-main */
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.price-block h3 {
+    font-size: 2.8rem;
+    color: #a08a69;
+}
+
+.owner-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.owner-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.owner-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.owner-status {
+    font-size: 14px;
+    color: #777;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/*.btn {*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    padding: 10px 15px;*/
+/*    border-radius: 5px;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    transition: background 0.3s ease-in-out;*/
+/*}*/
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.apartment-pricing p, .apartment-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #c8a77e;
+}
+
+/* CSS для секції */
+.apartment-location {
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.location-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.location-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-wrapper {
+    flex: 2;
+    min-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .location-content {
+        flex-direction: column;
+    }
+
+    .location-info, .map-wrapper {
+        width: 100%;
+    }
+}
+
+.location-map {
+    flex: 2;
+    position: relative;
+}
+
+.static-map {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.static-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-marker {
+    position: absolute;
+    font-size: 2rem;
+    color: #e74c3c;
+    transform: translate(-50%, -100%);
+}
+
+/* Оновлені стилі для фіксованої кнопки бронювання */
+.fixed-booking-btn-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    filter: drop-shadow(0 4px 12px rgba(160, 138, 105, 0.3));
+}
+
+.fixed-book-btn {
+    background-color: rgba(160, 138, 105, 0.9);
+    color: #1c1c1c;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.fixed-book-btn:hover:not(.booked) {
+    background-color: rgba(200, 167, 126, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(160, 138, 105, 0.4);
+}
+
+.fixed-book-btn.booked {
+    background-color: rgba(76, 175, 80, 0.9);
+    cursor: default;
+    animation: pulse 0.5s ease;
+}
+
+.fixed-book-btn.booked:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .fixed-booking-btn-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fixed-book-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .fixed-booking-btn-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fixed-book-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+.booking-modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #262626;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #a08a69;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #b3a89a;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.modal h2 {
+    color: #a08a69;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b3a89a;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a08a69;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #a08a69;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Стилі для комбінованого поля вводу дати */
+.date-input-field {
+    position: relative;
+}
+
+.date-input-field input[type="date"] {
+    padding-right: 30px; /* Залишаємо місце для іконки календаря */
+    width: 100%;
+    background-color: #1c1c1c;
+    color: #a08a69;
+    border: 1px solid #a08a69;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: inherit;
+    appearance: none; /* Вимикаємо стандартний вигляд */
+}
+
+.date-input-field input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: invert(0.7) sepia(1) saturate(5) hue-rotate(10deg);
+    cursor: pointer;
+}
+
+.date-input-field input[type="date"]:focus {
+    outline: none;
+    border-color: #c8a77e;
+    box-shadow: 0 0 0 2px rgba(160, 138, 105, 0.3);
+}
+
+/* Стилі для підказки формату */
+.date-format-hint {
+    font-size: 12px;
+    color: #b3a89a;
+    margin-top: 5px;
+}
+
+.price-summary {
+    margin: 15px 0;
+    text-align: center;
+    color: #ddd;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #c8a77e;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .fixed-booking-btn-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fixed-book-btn {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+/* Анімація для стану "заброньовано" */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fixed-book-btn.booked {
+    animation: pulse 0.5s ease;
+    background-color: rgba(76, 175, 80, 0.85);
+}
+
+/* Оновлені стилі для сторінки "Не знайдено" */
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); /* Враховуємо висоту хедера і футера */
+    padding: 40px 20px;
+    background-color: #1c1c1c;
+}
+
+.not-found-card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px 40px;
+    background: #262626;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid #3d3d3d;
+    text-align: center;
+}
+
+.not-found-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #a08a69, #d4b483, #a08a69);
+    background-size: 200% 100%;
+    animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.not-found-icon {
+    font-size: 80px;
+    color: #a08a69;
+    margin-bottom: 20px;
+}
+
+.not-found-title {
+    font-size: 3.5rem;
+    color: #a08a69;
+    margin: 0 0 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(160, 138, 105, 0.3);
+}
+
+.not-found-subtitle {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+    margin: 0 0 20px;
+    font-weight: 500;
+}
+
+.not-found-text {
+    color: #b3b3b3;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.not-found-text strong {
+    color: #d4b483;
+    font-weight: 600;
+}
+
+.not-found-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.not-found-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background-color: #a08a69;
+    color: #1c1c1c;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 1rem;
+}
+
+.not-found-button:hover {
+    background-color: #c8a77e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(160, 138, 105, 0.3);
+}
+
+.not-found-button.secondary {
+    background-color: transparent;
+    color: #a08a69;
+    border-color: #a08a69;
+}
+
+.not-found-button.secondary:hover {
+    background-color: rgba(160, 138, 105, 0.1);
+}
+
+/* Анімація для іконки */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+.not-found-icon {
+    animation: bounce 1.5s infinite;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .not-found-card {
+        padding: 40px 25px;
+    }
+
+    .not-found-title {
+        font-size: 2.8rem;
+    }
+
+    .not-found-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .not-found-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .not-found-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found-title {
+        font-size: 2.2rem;
+    }
+
+    .not-found-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .not-found-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* Додайте ці стилі в кінець файлу ApartmentDetails.css */
+
+.location-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.location-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-wrapper {
+    flex: 2;
+    min-width: 300px;
+    height: 400px; /* Фіксована висота для контейнера */
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .location-content {
+        flex-direction: column;
+    }
+
+    .location-info,
+    .map-wrapper {
+        width: 100%;
+    }
+}
+
+.owner-phone {
+    margin-top: 10px;
+    padding: 10px;
+    background: #262626;
+    border-radius: 5px;
+}
+
+.call-now-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.call-btn.active {
+    background: #e0e0e0;
+}
+

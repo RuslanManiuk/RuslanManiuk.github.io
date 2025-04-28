@@ -1,0 +1,328 @@
+/* Основні стилі сторінки */
+body {
+    background-image: url('../../public/images/silhouettes/silhouttes_without_fone/City10-Photoroom.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/images/silhouettes/silhouttes_without_fone/City10-Photoroom.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(5px);
+    z-index: -2;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+/* Секція бронювань */
+.my-reservations {
+    padding: 180px 0;
+    min-height: 70vh;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d4b483;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Сітка бронювань */
+.bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Картка бронювання */
+.booking-card {
+    background-color: #2e2e2e;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #a08a69;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-color: #c8a77e;
+}
+
+.booking-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.booking-card:hover .booking-image img {
+    transform: scale(1.08);
+}
+
+.booking-details {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-details h3 {
+    margin: 0 0 15px;
+    color: #f0e6d2;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.booking-period, .booking-price {
+    margin: 8px 0;
+    color: #d4b483;
+    font-size: 1rem;
+}
+
+.booking-price {
+    font-weight: bold;
+    color: #f0e6d2;
+    font-size: 1.1rem;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: 1px solid #c0392b;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.details-btn {
+    background-color: #a08a69;
+    color: #1c1c1c;
+    border: 1px solid #8a7453;
+}
+
+.details-btn:hover {
+    background-color: #8a7453;
+    color: #f0e6d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Повідомлення про відсутність бронювань */
+.no-bookings-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(42, 42, 42, 0.7);
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #a08a69;
+}
+
+.no-bookings-message p {
+    font-size: 1.3rem;
+    color: #d4b483;
+    margin-bottom: 30px;
+}
+
+.no-bookings-message .btn {
+    background-color: #a08a69;
+    color: #1c1c1c;
+    padding: 14px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 1px solid #8a7453;
+}
+
+.no-bookings-message .btn:hover {
+    background-color: #8a7453;
+    color: #f0e6d2;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Модальне вікно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: #2e2e2e;
+    padding: 35px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #a08a69;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    color: #d4b483;
+    margin-top: 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.modal-content p {
+    color: #b3a89a;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #b3a89a;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #d4b483;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.confirm-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: 1px solid #c0392b;
+    padding: 12px 25px;
+}
+
+.confirm-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-cancel-btn {
+    background-color: #a08a69;
+    color: #1c1c1c;
+    border: 1px solid #8a7453;
+    padding: 12px 25px;
+}
+
+.modal-cancel-btn:hover {
+    background-color: #8a7453;
+    color: #f0e6d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .bookings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-buttons .btn {
+        width: 100%;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .booking-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,192 @@
+.auth-container {
+    max-width: 450px;
+    margin: 200px auto 200px; /* Збільшений верхній відступ */
+    padding: 40px;
+    background: rgba(28, 28, 28, 0.9);
+    border-radius: 12px;
+    border: 1px solid #a08a69;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative; /* Додаємо для коректного позиціонування */
+    z-index: 10; /* Нижче за хедер */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #d4b483;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 12px 0;
+    background: rgba(42, 42, 42, 0.7);
+    border: 1px solid #a08a69;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #f0e6d2;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.auth-container input:focus {
+    outline: none;
+    border-color: #d4b483;
+    box-shadow: 0 0 0 2px rgba(212, 180, 131, 0.3);
+}
+
+.auth-container input::placeholder {
+    color: #b3a89a;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 14px;
+    margin: 20px 0 10px;
+    background: linear-gradient(135deg, #a08a69, #c8a77e);
+    color: #1c1c1c;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container button:hover {
+    background: linear-gradient(135deg, #c8a77e, #d4b483);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container button:active {
+    transform: translateY(0);
+}
+
+.auth-container button:disabled {
+    background: #666;
+    transform: none;
+    cursor: not-allowed;
+}
+
+.google-btn {
+    background: linear-gradient(135deg, #4285F4, #34A853) !important;
+    color: white !important;
+    position: relative;
+    padding-left: 50px;
+}
+
+.google-btn:hover {
+    background: linear-gradient(135deg, #357ABD, #2d9246) !important;
+}
+
+.google-btn::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg') no-repeat center;
+    background-size: contain;
+}
+
+.error {
+    color: #ff6b6b;
+    margin: 15px 0;
+    padding: 12px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #b3a89a;
+    font-size: 0.95rem;
+}
+
+.auth-link a {
+    color: #d4b483;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+}
+
+.auth-link a:hover {
+    color: #f0e6d2;
+    text-decoration: underline;
+}
+
+/* Анімація для полів введення */
+@keyframes inputFocus {
+    0% { box-shadow: 0 0 0 0 rgba(212, 180, 131, 0); }
+    100% { box-shadow: 0 0 0 3px rgba(212, 180, 131, 0.3); }
+}
+
+.auth-container input:focus {
+    animation: inputFocus 0.4s ease-out;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 40px auto;
+        padding: 30px 20px;
+        width: 90%;
+    }
+
+    .auth-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Додаткові ефекти для кнопок */
+.auth-container button {
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.auth-container button:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}

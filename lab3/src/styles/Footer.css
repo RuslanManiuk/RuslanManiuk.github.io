@@ -1,0 +1,80 @@
+/*Нова версія футера*/
+.footer {
+    background-color: #262626;
+    color: #B3A89A;
+    padding: 20px 0;
+    text-align: unset;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Розподіляє простір між елементами */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Додайте відступи по боках */
+    width: 100%;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Кожен блок займає однакову ширину */
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    justify-content: flex-start; /* Текст зліва */
+}
+
+.footer-center {
+    justify-content: center; /* Лого по центру */
+}
+
+.footer-right {
+    justify-content: flex-end; /* Іконки справа */
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #B3A89A;
+    font-weight: bold;
+    margin: 0; /* Видаляємо зайві відступи */
+}
+
+.footer-logo {
+    font-size: 20px;
+    color: #B3A89A;
+    font-weight: bold;
+    margin: 0; /* Видаляємо зайві відступи */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    fill: #B3A89A;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: #B3A89A;
+    transition: stroke 0.3s ease;
+}
+
+.social-icon:hover svg {
+    stroke: white;
+}
